@@ -8,7 +8,6 @@ let apiLists = [];
 
 // If there isnt local storage from api already stored, get all the data, save in storage, and render the data
 if (!apiData) {
-  console.log('Making fetch call');
   fetch('https://api.publicapis.org/entries')
     .then(res => {
       if (!res.ok) {
@@ -94,7 +93,6 @@ function organizeApiData(apiData) {
 function renderAccordionContents(apiLists) {
   let output = ``;
   for (let i = 0; i < apiLists.length; i++) {
-    console.log(apiLists[i].apiArr.length);
     output += createAccordionItem(apiLists[i], i);
   }
 
